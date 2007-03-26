@@ -2,5 +2,5 @@
 
 cd ~/dev/tRack
 git add -A
-git commit -m '"$@"'
+git commit 
 git push origin master
