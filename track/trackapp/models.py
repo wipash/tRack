@@ -6,10 +6,17 @@ class Rack(models.Model):
 	number = models.SmallIntegerField()
 	floor = models.SmallIntegerField()
 	size = models.SmallIntegerField()
+
+	def __unicode__(self):
+		return str(self.number)
+
 	
 class Customer(models.Model):
 	name = models.CharField(max_length=100)
 	crmID = models.CharField(max_length=100)
+
+	def __unicode__(self):
+		return str(self.name)
 	
 	
 class VLAN(models.Model):
@@ -17,11 +24,19 @@ class VLAN(models.Model):
 	number = models.SmallIntegerField()
 	name = models.CharField(max_length=50)
 
+	def __unicode__(self):
+		return str(self.number)
+
+
 class Network(models.Model):
 	network = models.GenericIPAddressField()
-	subnet = models.IPAddressField()
+	subnet = models.SmallIntegerField()
 	vlan = models.ForeignKey('VLAN')
 	
+	def __unicode__(self):
+		return u'%s/%s' % (self.network, self.subnet)
+
+
 class VLANRack(models.Model):
 	rack = models.ForeignKey('Rack')
 	vlan = models.ForeignKey('VLAN')
