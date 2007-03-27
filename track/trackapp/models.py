@@ -18,8 +18,8 @@ class VLAN(models.Model):
 	name = models.CharField(max_length=50)
 
 class Network(models.Model):
-	network = GenericIPAddressField(protocol=both, unpack_ipv4=false)
-	subnet = IPAddressField()
+	network = models.GenericIPAddressField()
+	subnet = models.IPAddressField()
 	vlan = models.ForeignKey('VLAN')
 	
 class VLANRack(models.Model):
