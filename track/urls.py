@@ -1,12 +1,13 @@
 from django.conf.urls import patterns, include, url
 from track.views import track_main
+from track.trackapp.views import trackapp_main
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    ('^$', track_main),
+    ('^$', trackapp_main),
 
     # Examples:
     # url(r'^$', 'track.views.home', name='home'),
