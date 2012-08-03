@@ -13,7 +13,7 @@ class Rack(models.Model):
 	
 class Customer(models.Model):
 	name = models.CharField(max_length=100)
-	crmID = models.CharField(max_length=100)
+	crmID = models.CharField(max_length=100, blank=True)
 
 	def __unicode__(self):
 		return str(self.name)
@@ -44,8 +44,8 @@ class VLANRack(models.Model):
 class CustomerRack(models.Model):
 	rack = models.ForeignKey('Rack')
 	customer = models.ForeignKey('Customer')
-	groupName = models.CharField(max_length=100)
-	totalU = models.SmallIntegerField()
-	uStart = models.SmallIntegerField()
-	uEnd = models.SmallIntegerField()
-	notes = models.TextField()
+	groupName = models.CharField(max_length=100, blank=True)
+	totalU = models.SmallIntegerField(blank=True, null=True)
+	uStart = models.SmallIntegerField(blank=True, null=True)
+	uEnd = models.SmallIntegerField(blank=True, null=True)
+	notes = models.TextField(blank=True)
