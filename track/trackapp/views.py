@@ -1,4 +1,4 @@
 from django.http import HttpResponse
 
-def track_main(request):
+def trackapp_main(request):
 	return HttpResponse("<h1>tRack</h1>")
