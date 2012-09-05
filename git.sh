@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/dev/tRack
+cd /home/seanmcg/dev/tRack
 git add -A
 git commit 
 git push origin master
