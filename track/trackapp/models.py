@@ -13,7 +13,7 @@ class Rack(models.Model):
 	
 class Customer(models.Model):
 	name = models.CharField(max_length=100)
-	crmID = models.CharField(max_length=100, blank=True)
+	crmID = models.CharField(max_length=100, blank=True, verbose_name='CRM Account Number')
 
 	def __unicode__(self):
 		return str(self.name)

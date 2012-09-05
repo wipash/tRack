@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from track.views import track_main
 from track.trackapp.views import trackapp_main
 from django.contrib import admin
+from django.contrib.auth.views import login, logout
 admin.autodiscover()
 
 
@@ -13,6 +14,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     ('^$', trackapp_main),
     ('^admin/', include(admin.site.urls)),
+    (r'^login/$',  login),
+    (r'^logout/$', logout),
     # Examples:
     # url(r'^$', 'track.views.home', name='home'),
     # url(r'^track/', include('track.foo.urls')),
